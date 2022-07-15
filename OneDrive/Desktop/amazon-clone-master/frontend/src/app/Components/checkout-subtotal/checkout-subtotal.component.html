@@ -1,0 +1,10 @@
+<div class="subtotal" *ngIf="shoppingCart.getCartLength() > 0">
+  <p>Totale provvisorio: ({{shoppingCart.getCartLength()}} articoli)
+     <strong>${{shoppingCart.getTotal()}}</strong></p>
+  <div class="subtotal_gift">
+    <input type="checkbox" />
+    <p>Quest'ordine contiene un regalo</p>
+  </div>
+  <button *ngIf="!this.loginService.getIsLogged()" (click) ="this.loginService.login()">Procedi all'ordine</button>
+  <button *ngIf="this.loginService.getIsLogged()">Procedi all'ordine</button>
+</div>
